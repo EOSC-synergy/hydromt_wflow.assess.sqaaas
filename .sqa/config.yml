@@ -1,0 +1,42 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/Deltares/hydromt_wflow:
+      branch: main
+      repo: https://github.com/Deltares/hydromt_wflow
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/2.0.0
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/Deltares/hydromt_wflow git:
+        commands:
+        - /usr/bin/env sh .sqa/script.tasty-rust-goat.sh
+        container: qc.acc_cranky-amethyst-jackal
+  QC.Doc:
+    repos:
+      github.com/Deltares/hydromt_wflow find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.sloppy-maroon-rhinoceros.sh
+        container: qc.doc_hilly-eggplant-akbash
+      github.com/Deltares/hydromt_wflow git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snippy-rose-hummingbird.sh
+        container: qc.doc_lumpy-ruby-moose
+  QC.Lic:
+    repos:
+      github.com/Deltares/hydromt_wflow licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.surly-tangerine-oyster.sh
+        container: qc.lic_crappy-brown-wolf
+  QC.Ver:
+    repos:
+      github.com/Deltares/hydromt_wflow get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.gimpy-azure-squirt.sh
+        container: qc.ver_randy-copper-bandicoot
+timeout: 5400
