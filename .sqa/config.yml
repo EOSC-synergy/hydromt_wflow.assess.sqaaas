@@ -5,7 +5,7 @@ config:
       branch: main
       repo: https://github.com/Deltares/hydromt_wflow
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.0.0
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
 environment:
   JPL_DOCKERFORCEBUILD: enabled
@@ -15,28 +15,58 @@ sqa_criteria:
     repos:
       github.com/Deltares/hydromt_wflow git:
         commands:
-        - /usr/bin/env sh .sqa/script.tasty-rust-goat.sh
-        container: qc.acc_cranky-amethyst-jackal
+        - /usr/bin/env sh .sqa/script.cheeky-indigo-spitz.sh
+        container: qc.acc_wheezy-periwinkle-cichlid
   QC.Doc:
     repos:
       github.com/Deltares/hydromt_wflow find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.sloppy-maroon-rhinoceros.sh
-        container: qc.doc_hilly-eggplant-akbash
+        - /usr/bin/env sh .sqa/script.ready-asparagus-magpie.sh
+        container: qc.doc_ugly-wisteria-reindeer
       github.com/Deltares/hydromt_wflow git:
         commands:
-        - /usr/bin/env sh .sqa/script.snippy-rose-hummingbird.sh
-        container: qc.doc_lumpy-ruby-moose
+        - /usr/bin/env sh .sqa/script.greasy-cornflower-armadillo.sh
+        container: qc.doc_gloppy-wisteria-mastiff
+      github.com/Deltares/hydromt_wflow markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.scaly-turquoise-starfish.sh
+        container: qc.doc_tasty-ruby-crane
+      github.com/Deltares/hydromt_wflow restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.tasty-ultramarine-squirrel.sh
+        container: qc.doc_scanty-blue-cow
   QC.Lic:
     repos:
       github.com/Deltares/hydromt_wflow licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.surly-tangerine-oyster.sh
-        container: qc.lic_crappy-brown-wolf
+        - /usr/bin/env sh .sqa/script.cloudy-dandelion-hummingbird.sh
+        container: qc.lic_sleepy-orange-duck
+  QC.Sec:
+    repos:
+      github.com/Deltares/hydromt_wflow bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.chummy-viridian-bee.sh
+        container: qc.sec_lousy-yellow-catfish
+  QC.Sty:
+    repos:
+      github.com/Deltares/hydromt_wflow flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.sloppy-cerise-raccoon.sh
+        container: qc.sty_stinky-black-llama
+      github.com/Deltares/hydromt_wflow jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.sleazy-cobalt-hedgehog.sh
+        container: qc.sty_shabby-vermilion-chamois
+  QC.Uni:
+    repos:
+      github.com/Deltares/hydromt_wflow pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.sickly-chestnut-moose.sh
+        container: qc.uni_blurry-cerulean-angelfish
   QC.Ver:
     repos:
       github.com/Deltares/hydromt_wflow get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.gimpy-azure-squirt.sh
-        container: qc.ver_randy-copper-bandicoot
+        - /usr/bin/env sh .sqa/script.wheezy-rose-gibbon.sh
+        container: qc.ver_baggy-maroon-squirrel
 timeout: 5400
