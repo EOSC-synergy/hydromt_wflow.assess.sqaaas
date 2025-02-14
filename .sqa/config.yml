@@ -15,58 +15,58 @@ sqa_criteria:
     repos:
       github.com/Deltares/hydromt_wflow git:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-indigo-spitz.sh
-        container: qc.acc_wheezy-periwinkle-cichlid
+        - /usr/bin/env sh .sqa/script.scanty-brown-tarsier.sh
+        container: qc.acc_wiggy-chocolate-cat
   QC.Doc:
     repos:
       github.com/Deltares/hydromt_wflow find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.ready-asparagus-magpie.sh
-        container: qc.doc_ugly-wisteria-reindeer
+        - /usr/bin/env sh .sqa/script.surly-wisteria-gharial.sh
+        container: qc.doc_muzzy-copper-yak
       github.com/Deltares/hydromt_wflow git:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-cornflower-armadillo.sh
-        container: qc.doc_gloppy-wisteria-mastiff
+        - /usr/bin/env sh .sqa/script.wheezy-coral-affenpinscher.sh
+        container: qc.doc_flimsy-champagne-frog
       github.com/Deltares/hydromt_wflow markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.scaly-turquoise-starfish.sh
-        container: qc.doc_tasty-ruby-crane
+        - /usr/bin/env sh .sqa/script.sloppy-goldenrod-dachshund.sh
+        container: qc.doc_silly-asparagus-vulture
       github.com/Deltares/hydromt_wflow restructuredtext-lint:
         commands:
-        - /usr/bin/env sh .sqa/script.tasty-ultramarine-squirrel.sh
-        container: qc.doc_scanty-blue-cow
+        - /usr/bin/env sh .sqa/script.lanky-ochre-kakapo.sh
+        container: qc.doc_geeky-aquamarine-giraffe
   QC.Lic:
     repos:
       github.com/Deltares/hydromt_wflow licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.cloudy-dandelion-hummingbird.sh
-        container: qc.lic_sleepy-orange-duck
+        - /usr/bin/env sh .sqa/script.seedy-persimmon-collie.sh
+        container: qc.lic_pasty-wheat-fossa
   QC.Sec:
     repos:
       github.com/Deltares/hydromt_wflow bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.chummy-viridian-bee.sh
-        container: qc.sec_lousy-yellow-catfish
+        - /usr/bin/env sh .sqa/script.lumpy-chestnut-woodlouse.sh
+        container: qc.sec_flaky-indigo-ant
   QC.Sty:
     repos:
       github.com/Deltares/hydromt_wflow flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.sloppy-cerise-raccoon.sh
-        container: qc.sty_stinky-black-llama
+        - /usr/bin/env sh .sqa/script.fuzzy-fuchsia-numbat.sh
+        container: qc.sty_skanky-sangria-moose
       github.com/Deltares/hydromt_wflow jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.sleazy-cobalt-hedgehog.sh
-        container: qc.sty_shabby-vermilion-chamois
+        - /usr/bin/env sh .sqa/script.snazzy-olive-capybara.sh
+        container: qc.sty_pasty-salmon-macaw
   QC.Uni:
     repos:
       github.com/Deltares/hydromt_wflow pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.sickly-chestnut-moose.sh
-        container: qc.uni_blurry-cerulean-angelfish
+        - /usr/bin/env sh .sqa/script.wiggy-razzmatazz-weasel.sh
+        container: qc.uni_clammy-scarlet-coyote
   QC.Ver:
     repos:
       github.com/Deltares/hydromt_wflow get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-rose-gibbon.sh
-        container: qc.ver_baggy-maroon-squirrel
+        - /usr/bin/env sh .sqa/script.surly-purple-mastiff.sh
+        container: qc.ver_silly-azure-beagle
 timeout: 5400
